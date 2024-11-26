@@ -1,0 +1,118 @@
+/* src/components/Navbar.css */
+.navbar { 
+    display: flex; 
+    flex-direction: column;
+    justify-content: space-between; 
+    align-items: center;
+    width: 100%; 
+    box-sizing: border-box; /* Include padding in the element's total width and height */ 
+}
+  .navbar-top {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+    background-color: rgb(106, 170, 10);
+    height: 60px;
+  }
+  .social-icons{
+    width: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .social-icons i{
+    background-color: #333;
+    color: white;
+    font-size: 15px;
+    padding: 8px;
+  }
+  .search-bar{
+    width: 30%;
+    height: 50%;
+    background-color: #f8f8f8;
+    display: flex;
+    justify-content: space-between;
+  }
+  .search-bar input{
+    width: 90%;
+    border: none;
+  }
+  .search-bar button{
+    border: none;
+    background-color: transparent;
+  }
+  .contact-info{
+    width: 30%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .contact-info i{
+    margin-right: 20px;
+    font-size: 20px;
+  }
+  .navbar-bottom {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+  }
+  
+  .logo {
+    height: 40px;
+    margin-right: 10px;
+    width: 15%;
+  }
+  
+  .navbar-center {
+    flex-grow: 1;
+    width: 80%;
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    align-items: center;
+  }
+  
+  .nav-links li {
+    margin: 0 10px;
+  }
+  
+  .nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-size: 15px;
+  }
+  
+  
+  
+  .social-icons a {
+    margin: 0 5px;
+    color: #333;
+  }
+  .nav-links i{
+    font-size: 15px;
+    margin-left: 10px;
+  }
+  
+  
+  
+  .contact-info span {
+    margin-right: 10px;
+  }
+  
+  .start-planning {
+    background-color: #ffc107;
+    border: none;
+    padding: 5px 10px;
+    margin-right: 10px;
+  }
+  
+  .fab, .fas {
+    font-size: 20px;
+  }
+  
