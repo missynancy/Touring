@@ -6,6 +6,7 @@
     align-items: center;
     width: 100%; 
     box-sizing: border-box; /* Include padding in the element's total width and height */ 
+    position: fixed;
 }
   .navbar-top {
     display: flex;
@@ -13,7 +14,7 @@
     width: 100%;
     justify-content: space-between;
     background-color: rgb(106, 170, 10);
-    height: 60px;
+    height: 50px;
   }
   .social-icons{
     width: 20%;
@@ -57,17 +58,21 @@
     align-items: center;
     width: 100%;
     justify-content: space-between;
+    height: 70px;
   }
   
   .logo {
-    height: 40px;
+    height: 90%;
     margin-right: 10px;
-    width: 15%;
+    background-color: transparent;
+    width: 20%;
+    
   }
   
   .navbar-center {
     flex-grow: 1;
     width: 80%;
+    padding: 0 20px;
   }
   
   .nav-links {
@@ -76,6 +81,8 @@
     justify-content: space-around;
     width: 100%;
     align-items: center;
+    padding: 0 20px;
+    position: relative;
   }
   
   .nav-links li {
@@ -87,7 +94,53 @@
     color: #333;
     font-size: 15px;
   }
+  .navLinks-categories {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: transparent;
+    z-index: 10;
+}
+  .nav-links li:hover .navLinks-categories {
+    display: flex;
+  }
+  .navLinks-categories-1{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+    width: 33%;
+  }
+  .navLinks-categories-1 ul {
+    padding: 0;
+    margin: 0;
+  }
+  .navLinks-categories-1 ul li {
+    width: 100%;
+    padding: 2px 0px;
+  }
+  .navLinks-categories-1 ul li a{
+    font-size: 16px;
+    width: 100%;
+  }
+  .navLinks-categories-1  hr{
+    width: 92%;
+    height: 0.5px;
+    background-color: #fdfcfc;
+  }
   
+  .hamburger {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    margin-left: 10px;
+    position: absolute;
+    right: 0;
+    display: none; /* Hidden by default */
+  }
   
   
   .social-icons a {
@@ -114,5 +167,224 @@
   
   .fab, .fas {
     font-size: 20px;
+  }
+  
+ .bxs-right-arrow{
+    display: none;
+ }
+/* Mobile and Tablet */
+@media (max-width: 768px) {
+    .navbar-top {
+      height: auto;
+      padding: 10px;
+    }
+  
+    .social-icons {
+      width: 100%;
+      justify-content: center;
+      margin-bottom: 10px;
+    }
+  
+    .search-bar {
+      display: none;
+    }
+  
+    .contact-info {
+      width: 100%;
+      justify-content: space-between;
+      margin-bottom: 10px;
+    }
+  
+    .navbar-bottom {
+      align-items: center;
+      margin-top: 10px;
+      justify-content: space-between;
+      position: relative;
+    }
+  
+    .logo {
+      width: 30%;
+      margin: 10px 0;
+    }
+  
+    .navbar-center {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      position: absolute;
+      left: 0;
+    }
+  
+    .nav-links {
+      display: none;  /* Hide the menu by default on small screens */
+      flex-direction: column;
+      align-items: flex-start;
+      width: 270px;
+      padding: 0;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: white; /* Optional: to give a background to the menu */
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Optional: to add shadow */
+      z-index: 999; /* Ensure menu is above other content */
+    }
+  
+    .nav-links.open {
+      display: flex;  /* Make the menu visible when it's open */
+      position: absolute;
+      z-index: 999;
+      left: 0;
+      margin-top: 40px;
+    }
+  
+    .nav-links li {
+      margin: 5px 0;
+    }
+  
+    .nav-links li a {
+      color: #333;
+      text-decoration: none;  /* Optional: Add this if you want to remove underline */
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px;
+    }
+    .navLinks-categories {
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 280px;
+        width: calc(100%-270px);
+        max-height: 400px;
+        overflow-y: auto;
+        overflow-x: hidden;
+
+    }
+    .navLinks-categories-1{
+        width: 100%;
+      }
+      .nav-links li:hover .navLinks-categories {
+        display: flex;
+        flex-direction: column;
+      }
+      .navLinks-categories-1 ul li {
+        padding: 0px;
+      }
+  .navLinks-categories-1  hr{
+    margin-top: -10px;
+  }
+    .bxs-down-arrow{
+        display: none;
+    }
+    .bxs-right-arrow{
+        display: flex;
+        position: absolute;
+        right: 20px;
+     }
+  
+     .hamburger {
+        background: none;
+        border: none;
+        font-size: 24px;
+        display: block; /* Make hamburger icon visible for small screens */
+        cursor: pointer;
+        margin-left: 10px;
+        position: absolute;
+        right: 0;
+      }
+  
+    .hamburger i {
+      color: #333;
+
+    }
+  }
+  @media (max-width: 430px){
+    .navbar-top{
+        height: 40px;
+    }
+    .social-icons {
+        width: 40%;
+        margin-left: 20px;
+      }
+      .social-icons a i{
+        font-size: 10px;
+        padding: 5px;
+      }
+      .contact-info{
+        width: 40%;
+      }
+      .contact-info span{
+        display: none;
+      }
+      .contact-info button{
+        font-size: 12px;
+      }
+      .nav-links {
+        width: 200px;
+        
+      }
+
+      .nav-links li a{
+        font-size: 13px;
+      }
+      .navLinks-categories {
+        left: 205px;
+        width: calc(100%-270px);
+    }
+    .navLinks-categories-1 ul li a{
+        font-size: 12px;
+        margin-top: -10px;
+    }
+  }
+  @media (max-width: 375px){
+    .navbar-top{
+        height: 30px;
+    }
+    .social-icons {
+        margin-left: 30px;
+        margin-top: 10px;
+      }
+    
+      .contact-info button{
+        font-size: 10px;
+        padding: 5px;
+        margin-top: 10px;
+      }
+      .contact-info a{
+        margin-top: 15px;
+      }
+      .nav-links{
+        width: 170px;
+      }
+      .nav-links li a{
+        font-size: 10px;
+      }
+      .navLinks-categories {
+        left: 175px;
+        width: calc(100%-175px);
+    }
+  }
+  @media (max-width: 320px){
+    .navbar-top{
+        height: 25px;
+    }
+      .social-icons a {
+        margin: 0 3px;
+        color: #333;
+      }
+    
+      .contact-info button{
+        padding: 3px;
+      }
+      .nav-links{
+        width: 150px;
+      }
+      .nav-links li a{
+        padding:  5px;
+      }
+      .navLinks-categories {
+        left: 150px;
+        width: calc(100%-150px);
+    }
   }
   

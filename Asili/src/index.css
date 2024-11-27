@@ -8,23 +8,9 @@ body, html {
     background-color: #ffc107;
     padding: 10px;
   }
+  li{
+    list-style: none;
+  }
 
 
-
-  /* responsiveness */
-
-  /* @media (max-width: 768px){
-    
-    .social-icons{
-      width: 15%;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-    .social-icons i{
-      background-color: #333;
-      color: white;
-      font-size: 13px;
-      padding: 5px;
-    }
-  } */
+  
