@@ -7,6 +7,7 @@
     width: 100%; 
     box-sizing: border-box; /* Include padding in the element's total width and height */ 
     position: fixed;
+    z-index: 999;
 }
   .navbar-top {
     display: flex;
@@ -42,6 +43,13 @@
   .search-bar button{
     border: none;
     background-color: transparent;
+    text-align: center;
+    
+  }
+  .search-bar button i{
+    font-size: 13px;
+    font-weight: 600;
+    margin-top: -3px;
   }
   .contact-info{
     width: 30%;
@@ -91,7 +99,7 @@
   
   .nav-links a {
     text-decoration: none;
-    color: #333;
+    color: #fff;
     font-size: 15px;
   }
   .navLinks-categories {
@@ -99,9 +107,10 @@
     position: absolute;
     top: 100%;
     left: 0;
-    width: 100%;
+    width: 95%;
     background-color: transparent;
     z-index: 10;
+    background: linear-gradient(90deg, rgba(2,0,36,0.5) 0%, rgba(2,0,36,0.5), rgba(2,0,36,0.5) 100%);
 }
   .nav-links li:hover .navLinks-categories {
     display: flex;
@@ -112,6 +121,8 @@
     align-items: flex-start;
     position: relative;
     width: 33%;
+    margin-top: 15px;
+    
   }
   .navLinks-categories-1 ul {
     padding: 0;
@@ -125,10 +136,26 @@
     font-size: 16px;
     width: 100%;
   }
+  .navLinks-categories-1 h5{
+    color: white;
+    font-size: 16px;
+  }
   .navLinks-categories-1  hr{
     width: 92%;
     height: 0.5px;
     background-color: #fdfcfc;
+  }
+  .cat-2{
+    position: absolute;
+    left: 21%;
+    width: 50%;
+    background: linear-gradient(90deg, rgba(2,0,36,0.5) 0%, rgba(2,0,36,0.5), rgba(2,0,36,0.5) 100%);
+  }
+  .cat-3{
+    position: absolute;
+    width: 40%;
+    left: 36%;
+    background: linear-gradient(90deg, rgba(2,0,36,0.5) 0%, rgba(2,0,36,0.5), rgba(2,0,36,0.5) 100%);
   }
   
   .hamburger {
@@ -172,6 +199,16 @@
  .bxs-right-arrow{
     display: none;
  }
+
+/* carousel */
+.carousel-container {
+  width: 100%;
+  height: 100vh;
+}
+
+
+
+
 /* Mobile and Tablet */
 @media (max-width: 768px) {
     .navbar-top {

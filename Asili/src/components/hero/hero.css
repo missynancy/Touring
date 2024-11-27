@@ -1,0 +1,129 @@
+.background {
+    width: 700px;
+    height: 700px; /* Full viewport height */
+    float: left;
+    
+    padding: none;
+    object-fit: cover;
+    
+  }
+  .back{
+    z-index: 10;
+    
+  }
+  .hero{
+    top: 30px;
+    position: absolute;
+    width: 100%;
+    height: 80vh;
+    justify-content: center;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    z-index: 100;
+  }
+  .hero a{
+    text-decoration: none;
+    color: #FFF;
+  }
+  .hero-text{
+    color: WHITE;
+    font-size: 60px;
+    font-weight: 500;
+  }
+  .hero-link{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    width: 10%;
+    justify-content: space-between;
+    padding: 0 15px;
+    font-size: 16px;
+    font-weight: 600;
+    margin-left: 42%;
+    border: 1px solid #333;
+    border-radius: 15px;
+    background-color: transparent;
+    cursor: pointer;
+    background: linear-gradient(90deg, rgba(2,0,36,0.5) 0%, rgba(2,0,36,0.5), rgba(2,0,36,0.5) 100%);
+  }
+  .hero-link .bx-right-arrow-circle{
+    font-size: 30px;
+  }
+  .hero-link:hover{
+    background-color: rgb(106, 170, 10);
+    color: #fff;
+  }
+  .dots{
+    margin-bottom: -10%;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 35%;
+  }
+  .dots .hero-dots{
+    
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    
+    
+    
+  }
+  .hero-dots li{
+    list-style: none;
+    
+  }
+  .hero-dot{
+    background-color: white;
+    width: 40px;
+    height: 10px;
+    border-radius: 20px;
+    border: 1px solid black;
+    cursor: pointer;
+  }
+  .hero-dots .orange{
+    background-color: rgb(106, 170, 10);
+    
+  }
+  
+  @media (max-width: 768px) {
+    .hero-text{
+      font-size: 50px;
+    }
+    .hero-link{
+      width: 15%;
+    }
+    .dots{
+      margin-left: 28%;
+    }
+  }
+  @media (max-width: 430px) {
+    .hero-text{
+      font-size: 30px;
+      margin-top: -70%;
+    }
+    .hero-link{
+      width: 25%;
+      margin-left: 30%;
+    }
+    .dots{
+      margin-left: 4%;
+    }
+    
+  }
+  @media (max-width: 320px) {
+    .hero-text{
+      font-size: 28px;
+      margin-top: -10%;
+    }
+    .hero-dot{
+      width: 30px;
+    }
+    .hero-link{
+      width: 30%;
+      margin-left: 30%;
+    }
+    
+  }
+
+ 

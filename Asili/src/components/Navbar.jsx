@@ -51,9 +51,9 @@ const Navbar = () => {
         </button>
 
         <div className={`navbar-center`}>
-          <ul className={`nav-links ${menuOpen ? 'open' : ''}`}>
+         <ul className={`nav-links ${menuOpen ? 'open' : ''}`}>
           <li onClick={toggleSubMenu}>
-                <NavLink to="/tours" activeClassName="active-link">TOURS AND SAFARIS<i className='bx bxs-down-arrow'></i><i className='bx bxs-right-arrow'></i></NavLink>
+                <NavLink onClick={toggleSubMenu} activeClassName="active-link">TOURS AND SAFARIS<i className='bx bxs-down-arrow'></i><i className='bx bxs-right-arrow'></i></NavLink>
                 {subMenuOpen && (
                   <div className="navLinks-categories">
                     <div className="navLinks-categories-1">
@@ -98,11 +98,11 @@ const Navbar = () => {
                   </div>
                 )}
             </li>
-            <li>
-                <NavLink to="/experiences" activeClassName="active-link">EXPERIENCES<i className='bx bxs-down-arrow'></i><i className='bx bxs-right-arrow'></i></NavLink>
+            <li onClick={toggleSubMenu}>
+                <NavLink onClick={toggleSubMenu} activeClassName="active-link">EXPERIENCES<i className='bx bxs-down-arrow'></i><i className='bx bxs-right-arrow'></i></NavLink>
                 {subMenuOpen && (
                   <div className="navLinks-categories">
-                    <div className="navLinks-categories-1">
+                    <div className="navLinks-categories-1 cat-2">
                         <ul>
                             <li><a href="">Africa family safari </a></li>
                             <hr />
@@ -119,8 +119,28 @@ const Navbar = () => {
                   </div>
                 )}
             </li>
-            <li><NavLink to="/about" activeClassName="active-link">ABOUT US<i className='bx bxs-down-arrow'></i><i className='bx bxs-right-arrow'></i></NavLink></li>
-            <li><NavLink to="/info" activeClassName="active-link">TRAVEL INFORMATION<i className='bx bxs-down-arrow'></i><i className='bx bxs-right-arrow'></i></NavLink></li>
+            <li onClick={toggleSubMenu}>
+              <NavLink onClick={toggleSubMenu} activeClassName="active-link">TRAVEL INFORMATION<i className='bx bxs-down-arrow'></i><i className='bx bxs-right-arrow'></i>
+              {subMenuOpen && (
+                  <div className="navLinks-categories">
+                    <div className="navLinks-categories-1 cat-3">
+                        <ul>
+                            <li><a href="">Important Travel Information </a></li>
+                            <hr />
+                            <li><a href="">Travel Guide</a></li>
+                            <hr />
+                            <li><a href="">Accommodation</a></li>
+                            <hr />
+                            <li><a href="">Parks & Reserves</a></li>
+                            <li><a href="">Safari FAQ</a></li>
+                            <hr />
+                        </ul>
+                    </div>
+                    
+                  </div>
+                )}
+            </NavLink></li>
+            <li><NavLink to="/about" activeClassName="active-link">ABOUT US</NavLink></li>
             <li><NavLink to="/offers" activeClassName="active-link">SPECIAL OFFERS</NavLink></li>
             <li><NavLink to="/blog" activeClassName="active-link">BLOG</NavLink></li>
             <li><NavLink to="/contact" activeClassName="active-link">CONTACT US</NavLink></li>
