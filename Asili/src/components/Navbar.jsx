@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react'; // Add useEffect here
 import { NavLink } from 'react-router-dom';
 import logo from '../assets/asili-adventure-logo.png';
 import './Components.css';
@@ -6,6 +6,7 @@ import './Components.css';
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);  // State to toggle the menu
   const [subMenuOpen, setSubMenuOpen] = useState(false); // State to toggle submenus
+  const [scrolling, setScrolling] = useState(false); // State to track if the page is scrolled
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
@@ -14,8 +15,25 @@ const Navbar = () => {
     setSubMenuOpen(!subMenuOpen);
   };
 
+  // Check the scroll position and update the state
+  const handleScroll = () => {
+    if (window.scrollY > 100) {  // If the page is scrolled more than 100px
+      setScrolling(true);
+    } else {
+      setScrolling(false);
+    }
+  };
+
+  // Attach the scroll event listener on component mount and cleanup on unmount
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
-    <nav className="navbar">
+    <nav className={`navbar ${scrolling ? 'scrolled' : ''}`}>  {/* Add class when scrolling */}
       <div className="navbar-top">
         <div className="social-icons">
           <a href="https://api.whatsapp.com/send?phone=254722864021"><i className="fab fa-whatsapp"></i></a>

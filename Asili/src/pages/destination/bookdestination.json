@@ -1,0 +1,50 @@
+[
+    {
+        "name": "East Africa Wildlife Safaris and Gorilla Trekking Tours",
+        "content": "Explore & Discover East-Africa Why should you travel to East Africa? This East Africa Gorilla safaris takes you to two…",
+        "image": "public/images/gorilla.jpg",
+        "link": "/gorillatours"
+    },
+    {
+        "name": "Africa Wildlife Safaris and Beach Vacation Holidays",
+        "content": "Bush and Beach Safaris in Kenya and Tanzania Wildlife & Beach Vacations / Kenyan wildlife & Coast Holiday Safaris /…",
+        "image": "public/images/beaches.jpg",
+        "link": "/beaches"
+    },
+    {
+        "name": "Africa Photography Safaris",
+        "content": "Professionally guided Photographic safaris in Kenya Discover our perfect Africa Photography Safaris tour packages. This tour packages are suited for… ",
+        "image": "public/images/photos.jpg",
+        "link": "/photography"
+    },
+    {
+        "name": "Africa Family Safaris",
+        "content": "Family Safaris in Africa Family Safaris in Africa / Child-friendly Safari packages Is it safe to travel with my Kids…",
+        "image": "public/images/familysafari.jpg",
+        "link": "/familysafari"
+    },
+    {
+        "name": "Senior Citizen Safaris",
+        "content": "Safaris in Kenya and Tanzania for senior citizens  Our adventure senior Citizen safaris are perfectly tailored to suit all travelers…",
+        "image": "public/images/senior.jpg",
+        "link": "/seniorsafari"
+    },
+    {
+        "name": "Mount Kilimanjaro Climbing Expeditions",
+        "content": "Mount Kilimanjaro Climbing Expeditions  |Mountain Trekking Safaris Reserve any of our Mount Kilimanjaro Climbing Expeditions packages. Nearly everyone would like…",
+        "image": "public/images/kilimajaro.jpg",
+        "link": "/kilimanjaro"
+    },
+    {
+        "name": "Bird Watching Safaris",
+        "content": "Kenya and Tanzania Group Safari / Small Group trips / Group joining safaris We operate a large number of scheduled…",
+        "image": "public/images/birds.jpg",
+        "link": "/birdwatching"
+    },
+    {
+        "name": "Mount Kenya Climbing Expeditions",
+        "content": "Mount Kenya Climbing Expeditions information Mount Kenya Climbing expeditions and expertly Guided Mountain Climbing Experience to the summit . We…",
+        "image": "public/images/mtkenya.jpg",
+        "link": "/mountkenya"
+    }
+]

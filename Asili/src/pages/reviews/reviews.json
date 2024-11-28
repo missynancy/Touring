@@ -1,0 +1,27 @@
+[
+    {
+      "image": "public/images/judith.jpg",
+      "name": "Judith",
+      "review": "Our safari with Asili Adventures was extraordinary. Monica did an amazing job customizing the itinerary to meet all our bucket-list dreams. She went above and beyond to ensure everything was perfect!",
+      "rating": 5
+    },
+    {
+      "image": "public/images/ian.jpg",
+      "name": "Ian S",
+      "review": "I've been using Asili Adventures for all my vacations, and they always exceed expectations with excellent service and efficient itineraries. My stay at Enkorok Mara Camp was unforgettable. Thanks to Joyce, guide Charles, and the team for making this trip relaxing and memorable!",
+      "rating": 5
+    },
+    {
+      "image": "public/images/andreas.jpg",
+      "name": "Andreas H",
+      "review": "Asili organized a flawless 3-week safari in September 2024. From seamless airport pick-up to drop-off, Monica tailored the trip perfectly. After visiting Nairobi's Giraffe Center and Sheldrick Elephant Nursery, we spent 8 days in 5 different places with our outstanding driver, Charles. We then flew to Serengeti, where our amazing guide, Rama, greeted us. Everything was perfectly organized!",
+      "rating": 5
+    },
+    {
+      "image": "public/images/casare.jpg",
+      "name": "Cesare S",
+      "review": "Our 10-day Tanzania safari with Asili Adventures was amazing. Monica, the manager, is highly knowledgeable and always ready to assist. The Asili drivers are not only skilled and cautious but also excellent guides, sharing insights about the country and culture. We highly recommend Asili for any trip in Kenya or Tanzania.",
+      "rating": 5
+    }
+  ]
+  

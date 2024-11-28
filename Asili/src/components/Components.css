@@ -8,6 +8,10 @@
     box-sizing: border-box; /* Include padding in the element's total width and height */ 
     position: fixed;
     z-index: 999;
+    transition: background 0.3s ease; /* Smooth transition for background change */
+}
+.navbar.scrolled {
+  background: linear-gradient(90deg, rgba(2, 0, 36, 0.5) 0%, rgba(2, 0, 36, 0.5), rgba(2, 0, 36, 0.5) 100%);
 }
   .navbar-top {
     display: flex;

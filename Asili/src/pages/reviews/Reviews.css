@@ -1,0 +1,139 @@
+.carousel-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    border-radius: 8px;
+    width: 98%;
+    height: 60vh;
+    margin-top: 140px;
+  }
+  
+  .carousel-content {
+    display: flex;
+    justify-content: space-between; /* Make the reviews appear in a row */
+    align-items: center; /* Center vertically */
+    text-align: center; /* Center text inside each review */
+    transition: transform 0.5s ease; /* Smooth transition effect for slide */
+    width: 90%;
+  }
+  
+  .review {
+    width: 33%; /* Set the width of each review to 30% for 3 items to fit side by side */
+    padding: 10px;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3); /* Apply shadow to individual review */
+    border-radius: 8px;
+    background-color: white;
+    margin: 0 10px; /* Space between reviews */
+    height: 89%;
+  }
+  
+  .review-image {
+    width: 80px;  /* Adjust image size */
+    height: 80px;
+    object-fit: cover; /* Ensure the image fits nicely */
+    border-radius: 50%; /* Circular images */
+    margin-bottom: 10px;
+  }
+  
+  .review-text {
+    font-size: 15px;
+    font-style: italic;
+    color: #555;
+  }
+  
+  .review-author {
+    font-weight: bold;
+    margin-top: 10px;
+  }
+  
+  .review-rating {
+    font-size: 20px;
+    margin-top: 10px;
+    color: gold;
+  }
+  
+  .carousel-navigation {
+    margin-top: 20px;
+  }
+  .carousel-navigation button{
+    margin-bottom: 30px;
+  }
+  .nav-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    margin: 0 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+  }
+  
+  .nav-button:hover {
+    background-color: #0056b3;
+  }
+  
+  .nav-button:focus {
+    outline: none;
+  }
+  .c-2{
+    display: none;
+  }
+  .c-3{
+    display: none;
+  }
+  /* Media Queries for Responsiveness */
+  
+  /* For screen widths 768px and below, display 2 reviews per row */
+  @media screen and (max-width: 768px) {
+    .carousel-content{
+        display: none;
+    }
+    .c-2{
+        display: flex;
+    }
+    .review {
+      width: 45%; /* Display 2 reviews on screens smaller than 768px */
+    }
+  }
+  
+  /* For screen widths 430px and below, display 2 reviews per row */
+  @media screen and (max-width: 430px) {
+    .review {
+      width: 49%; /* Display 2 reviews on screens smaller than 430px */
+      margin-top: 100px;
+    }
+    .review-text {
+        font-size: 12px;
+      }
+  }
+  
+  /* For screen widths 375px and below, display 1 review per row */
+  @media screen and (max-width: 375px) {
+    .c-2{
+        display: none;
+    }
+    .c-3{
+        display: flex;
+    }
+    .review {
+      width: 80%; /* Display 1 review on screens smaller than 375px */
+    }
+    .review-text {
+        font-size: 12px;
+      }
+      .carousel-navigation button{
+        margin-top: 30px;
+      }
+  }
+  
+  /* For extremely small screens (320px and below), display 1 review per row */
+  @media screen and (max-width: 320px) {
+    .review {
+      width: 90%; /* Display 1 review on very small screens */
+    }
+  }
+  

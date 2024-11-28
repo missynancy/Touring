@@ -4,11 +4,19 @@ body, html {
    width: 100%; 
    overflow-x: hidden;
    position: relative;
+   background-color: rgba(250, 247, 244, 0.979);
+   font-family: 'Times New Roman', Times, serif;
   }
   button{
     background-color: #ffc107;
     padding: 10px;
   }
+a{
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 600;
+}
+
   li{
     list-style: none;
   }
@@ -17,13 +25,72 @@ body, html {
   /* home */
   .landing-page{
     width: 100%;
-    height: 90vh;
+    height: 100vh;
+    clip-path: polygon(46% 0, 100% 0, 100% 43%, 100% 100%, 65% 95%, 34% 95%, 0 100%, 0% 43%, 0 0);
   }
   .landing-page img{
     width: 100%;
     height: 100%;
     object-fit: cover;
   }
+
+.features{
+  width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  
+}
+.features-p{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 80%;
+  height: 100%;
+  display: flex;
+}
+.features p{
+  margin-top: 30px;
+  font-size: 18px;
+  font-weight: 500;
+
+}
+.features p i{
+  background-color: transparent;
+  border: 2px solid black;
+  padding: 4px;
+  font-size: 16px;
+} 
+.home-packages{
+  width: 100%;
+  height: 80vh;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+
+}
+.home-packages-content{
+  width: 49%;
+  padding-left: 1%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.home-packages-content a:hover{
+  border-bottom: 1px solid rgb(44, 5, 185);
+}
+.home-packages img{
+  width: 49%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+.why-us{
+  width: 100%;
+  height: 80vh;
+}
+
 
 
 
@@ -36,6 +103,28 @@ body, html {
       height: 50vh;
       position: relative;
     }
+    .hero{
+      margin-top: -50px;
+    }
+    .home-packages{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: auto;
+      margin-top: -150px;
+    }
+    .home-packages-content{
+      width: 80%;
+      text-align: center;
+      height: 80vh;
+    }
+    .home-packages img{
+      height: 80vh;
+      width: 90%;
+      object-fit: contain;
+      margin-top: -200px;
+    }
   }
   @media (max-width: 375px) {
     .landing-page{
@@ -43,6 +132,36 @@ body, html {
       height: 80vh;
       position: relative;
     }
+    .hero{
+      margin-top: 50px;
+    }
+    .home-packages{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: auto;
+      margin-top: 20px;
+    }
+    .home-packages-content{
+      width: 80%;
+      text-align: center;
+      height: 80vh;
+    }
+    .home-packages img{
+      height: 80vh;
+      width: 90%;
+      object-fit: contain;
+      margin-top: 50px;
+    }
+    .hero{
+      margin-top: -20px;
+    }
   }
-
+  @media (max-width: 320px) {
+    
+    .home-packages{
+      margin-top: 60px;
+    }
+  }
  

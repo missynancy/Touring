@@ -1,0 +1,50 @@
+[
+    {
+        "name": "2025/2026 Special Offer Travel Deals",
+        "content": "Africa Safari Special offers | Safari Offers in  Africa  Enjoy exclusive safari deals this year. Book a safari package that…",
+        "image": "public/images/safari.jpg",
+        "link": "/offers"
+    },
+    {
+        "name": "Best Kenya Lodge safaris",
+        "content": "Explore Kenya Wildlife Lodge  Safaris  Our range of Best Kenya Lodge safari packages offer you as much to see and…",
+        "image": "public/images/lodges.jpg",
+        "link": "/lodges"
+    },
+    {
+        "name": "Kenya Air flight Safaris",
+        "content": "Kenya  Fly -in Safari Packages. We provide Exclusive Luxury Air Safaris to Kenya’s leading Game Parks and Game Reserves. This…",
+        "image": "public/images/safariair.jpg",
+        "link": "/flights"
+    },
+    {
+        "name": "Kenya and Tanzania Combined safaris",
+        "content": "Kenya and Tanzania safari combinations -Visit The Great Masai Mara and Serengeti National parks About our Kenya and Tanzania Combined…",
+        "image": "public/images/kt.jpg",
+        "link": "/kenyaTanzania"
+    },
+    {
+        "name": "Tanzania Wildlife Safari Tours",
+        "content": "Tanzania Wildlife Safari Tour Packages. Northern Circuit safaris / Zanzibar Beach safaris / Tanzania Wildlife Safari. Our Tanzania wildlife Safaris…",
+        "image": "public/images/tanzaniatour.jpg",
+        "link": "/tanzania"
+    },
+    {
+        "name": "Wildebeest Herds Migration 2025-2026 Safari Packages",
+        "content": "Great Wildebeest Herds Migration Safaris in Kenya and Tanzania  Reserve our great wildebeest migration safaris. While on this tours, you…",
+        "image": "public/images/Wildebeest.jpg",
+        "link": "/tanzania"
+    },
+    {
+        "name": "Scheduled 2025 and 2026 Group Joining Safaris",
+        "content": "Kenya and Tanzania Group Safari / Small Group trips / Group joining safaris We operate a large number of scheduled…",
+        "image": "public/images/sc.jpg",
+        "link": "/scheduled"
+    },
+    {
+        "name": "Best Value Safaris -Affordable safari packages",
+        "content": "Kenya and Tanzania Affordable Safari Packages Our Kenya and Tanzania best value safaris are the most affordable adventure tour packages.…",
+        "image": "public/images/bv.jpg",
+        "link": "/bestsafaris"
+    }
+]
