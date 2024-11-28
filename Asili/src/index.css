@@ -2,6 +2,7 @@ body, html {
    margin: 0; 
    padding: 0; 
    width: 100%; 
+   height: 100%;
    overflow-x: hidden;
    position: relative;
    background-color: rgba(250, 247, 244, 0.979);
@@ -34,7 +35,7 @@ a{
     object-fit: cover;
   }
 
-.features{
+/* .features{
   width: 100%;
   height: 60px;
   display: flex;
@@ -60,7 +61,7 @@ a{
   border: 2px solid black;
   padding: 4px;
   font-size: 16px;
-} 
+}  */
 .home-packages{
   width: 100%;
   height: 80vh;
