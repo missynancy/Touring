@@ -9,6 +9,7 @@
     position: fixed;
     z-index: 999;
     transition: background 0.3s ease; /* Smooth transition for background change */
+    background: linear-gradient(90deg, rgba(2,0,36,0.5) 0%, rgba(2,0,36,0.5), rgba(2,0,36,0.5) 100%);
 }
   .navbar-top {
     display: flex;

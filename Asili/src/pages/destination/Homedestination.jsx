@@ -37,6 +37,7 @@ const Destinations = () => {
                     <button className="arrow left" onClick={goLeft}>
                         <i className="fa fa-chevron-left" aria-hidden="true"></i>
                     </button>
+                    <a href="/destination">View All</a>
                     <button className="arrow right" onClick={goRight}>
                         <i className="fa fa-chevron-right" aria-hidden="true"></i>
                     </button>

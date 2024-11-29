@@ -2,8 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Hero } from '../components/hero/Hero';
 import { Background } from '../components/hero/Background';
 import image1 from '/images/safarifamily.jpg'
-import Destinations from './destination/Destination';
-import BookDestinations from './destination/BookDestination';
+import Destinations from './destination/Homedestination';
 import ReviewCarousel from './reviews/Reviews';
 
 const Home = () => {
@@ -44,14 +43,6 @@ const Home = () => {
         </div>
       </div>
       <Destinations/>
-      {/* <div className="features">
-        <div className="features-p">
-          <p><i class="fa fa-check" aria-hidden="true"></i> 5-Star TripAdvisor Reviews</p>
-          <p><i class="fa fa-check" aria-hidden="true"></i> Exemplary Services</p>
-          <p><i class="fa fa-check" aria-hidden="true"></i> Value For Money</p>
-          <p><i class="fa fa-check" aria-hidden="true"></i> Africa Safari Expert</p>
-        </div>
-      </div> */}
       <div className="home-packages">
         <div className="home-packages-content">
           <h3>Explore Unique Safari Packages in East Africa</h3>
@@ -75,11 +66,35 @@ const Home = () => {
         </div>
         <img src={image1} alt="family safari photo" />
       </div>
-      <BookDestinations />
+      <div className="features">
+        <h4>Why Choose Us</h4>
+        <h5>Embarking on an East Africa safari is a once-in-a-lifetime experience, and we are here to make sure it's unforgettable. </h5>
+        <div className="features-p">
+          <div className="features-p-content">
+            <i class='bx bxl-trip-advisor'></i>
+            <p><i class="fa fa-check" aria-hidden="true"></i> 5-Star TripAdvisor Reviews</p>
+          </div>
+          <div className="features-p-content">
+            <div className="stars">
+              <i class="fa fa-star" aria-hidden="true"></i>
+              <i class="fa fa-star" aria-hidden="true"></i>
+              <i class="fa fa-star" aria-hidden="true"></i>
+              <i class="fa fa-star" aria-hidden="true"></i>
+              <i class="fa fa-star" aria-hidden="true"></i>
+            </div>
+            <p><i class="fa fa-check" aria-hidden="true"></i> Exemplary Services</p>
+          </div>
+          <div className="features-p-content">
+            <i class='bx bxs-credit-card'></i>
+            <p><i class="fa fa-check" aria-hidden="true"></i> Value For Money</p>
+          </div>
+          <div className="features-p-content">
+            <i class="fa fa-star" aria-hidden="true"></i>
+            <p><i class="fa fa-check" aria-hidden="true"></i> Africa Safari Expert</p>
+          </div>
+        </div>
+      </div>
       <ReviewCarousel />
-      {/* <div className="why-us">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Non nostrum cum deserunt inventore! Sunt quas nesciunt perspiciatis dolorum quod accusamus unde recusandae magni architecto esse nemo totam nulla, aliquid doloremque.
-      </div>  */}
     </div>
   );
 };
