@@ -6,9 +6,17 @@
     padding: 20px;
     border-radius: 8px;
     width: 98%;
-    height: 60vh;
-    margin-top: 140px;
+    height: 70vh;
+    background-image: 
+    linear-gradient(90deg, rgba(2,0,36,0.5) 0%, rgba(2,0,36,0.5), rgba(2,0,36,0.5) 100%),
+    url('public/images/tanzaniatour.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 20px 0px;
+    background-position: center;
+    color: white;
   }
+  
   
   .carousel-content {
     display: flex;
@@ -46,6 +54,7 @@
   .review-author {
     font-weight: bold;
     margin-top: 10px;
+    color: black;
   }
   
   .review-rating {
@@ -89,14 +98,38 @@
   
   /* For screen widths 768px and below, display 2 reviews per row */
   @media screen and (max-width: 768px) {
+    .carousel-container {
+      margin-top: 130px;
+      height: 80vh;
+      width: 100%;
+    }
+    .carousel-container a{
+      color: white;
+    }
     .carousel-content{
         display: none;
+        margin-top: 60px;
     }
     .c-2{
         display: flex;
     }
     .review {
       width: 45%; /* Display 2 reviews on screens smaller than 768px */
+      position: relative;
+      height: 100%;
+      
+    }
+    .review-rating {
+      position: absolute;
+      bottom: 0;
+      left: 30%;
+    }
+    .carousel-content{
+      height: 70%;
+    }
+    .review-text {
+      font-size: 13px;
+      margin-top: -15px;
     }
   }
   

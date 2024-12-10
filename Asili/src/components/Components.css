@@ -228,11 +228,18 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  width: 80%;
+  width: 98%;
   margin: 0 auto;
   padding: 0 20px;
+  height: 90%;
 }
-
+.footer-container-links{
+  width: 70%;
+  display: flex;
+  justify-content: space-between;
+  height: 100%;
+  padding: 8px 0px;
+}
 .footer-logo img {
   width: 150px;
 }

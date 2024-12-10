@@ -4,7 +4,7 @@ import './Destination.css';
 import destinationsData from './destination.json'; // Import destinations from the JSON file
 
 const DestinationCard = ({ destination }) => (
-    <div className="destination-card">
+    <div className="destination-card dc-2">
         <img src={destination.image} alt={destination.name} className="destination-image" />
         <div className="destination-info">
             <h3>{destination.name}</h3>
@@ -29,6 +29,9 @@ const Destinations = () => {
         setCurrentIndex((prevIndex) => (prevIndex + 3) % destinationsData.length);
     };
 
+    
+    
+
     return (
         <div className="destinations-section">
             <div className="destinations-section-content">
@@ -44,11 +47,12 @@ const Destinations = () => {
                 </div>
             </div>
             <div className="slider">
-                <div className="destinations-list">
+                <div className="destinations-list dl-2">
                     {destinationsData.slice(currentIndex, currentIndex + 3).map((destination, index) => (
                         <DestinationCard key={index} destination={destination} />
                     ))}
                 </div>
+                
             </div>
         </div>
     );
