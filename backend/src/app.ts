@@ -4,9 +4,8 @@ import helmet from 'helmet';
 import cors from 'cors';
 
 import * as middlewares from './middlewares';
-import apiRouter from './api';
 import MessageResponse from './interfaces/MessageResponse';
-
+import auth from './api/auth/index';
 require('dotenv').config();
 
 const app = express();
@@ -22,7 +21,7 @@ app.get<{}, MessageResponse>('/', (req, res) => {
   });
 })
 
-app.use('/api', apiRouter);
+app.use('/auth', auth);
 
 app.use(middlewares.notFound);
 app.use(middlewares.errorHandler);
