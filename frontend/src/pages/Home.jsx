@@ -2,6 +2,10 @@ import React, { useState, useEffect } from 'react';
 import { Hero } from '../components/hero/Hero';
 import { Background } from '../components/hero/Background';
 import image1 from '/images/safarifamily.jpg'
+import image2 from '/images/camera-location-1.png'
+import image3 from '/images/finance-protection.png'
+import image4 from '/images/value-for-money-1.png'
+import image5 from '/images/expert.png'
 import Destinations from './destination/Homedestination';
 import ReviewCarousel from './reviews/Reviews';
 
@@ -71,26 +75,24 @@ const Home = () => {
         <h5>Embarking on an East Africa safari is a once-in-a-lifetime experience, and we are here to make sure it's unforgettable. </h5>
         <div className="features-p">
           <div className="features-p-content">
-            <i class='bx bxl-trip-advisor'></i>
-            <p><i class="fa fa-check" aria-hidden="true"></i> 5-Star TripAdvisor Reviews</p>
+            <img src={image2} alt="" />
+            <h2>Diverse East Africa Destinations</h2>
+            <p>Well selected cross border safaris to East Africa countries, Kenya ,Uganda, Tanzania and Rwanda</p>
           </div>
           <div className="features-p-content">
-            <div className="stars">
-              <i class="fa fa-star" aria-hidden="true"></i>
-              <i class="fa fa-star" aria-hidden="true"></i>
-              <i class="fa fa-star" aria-hidden="true"></i>
-              <i class="fa fa-star" aria-hidden="true"></i>
-              <i class="fa fa-star" aria-hidden="true"></i>
-            </div>
-            <p><i class="fa fa-check" aria-hidden="true"></i> Exemplary Services</p>
+            <img src={image3} alt="" />
+            <h2>Financial Protection</h2>
+            <p>Best Safari Tours Rates financial Security and Assurance - bonded members of <a href="https://katokenya.org/">KATO</a></p>
           </div>
           <div className="features-p-content">
-            <i class='bx bxs-credit-card'></i>
-            <p><i class="fa fa-check" aria-hidden="true"></i> Value For Money</p>
+            <img src={image4} alt="" />
+            <h2>Great Value for Money</h2>
+            <p>The true worth of a safari is in its value for money, get a Fair price with huge range of trips to suit every travel style</p>
           </div>
           <div className="features-p-content">
-            <i class="fa fa-star" aria-hidden="true"></i>
-            <p><i class="fa fa-check" aria-hidden="true"></i> Africa Safari Expert</p>
+            <img src={image5} alt="" />
+            <h2>Africa Safari Expert</h2>
+            The Directors collectively have over 40 years of experience in the hospitality and tourism industry...
           </div>
         </div>
       </div>

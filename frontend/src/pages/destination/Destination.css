@@ -153,6 +153,14 @@
     .destinations-list {
         gap: 15px;
     }
+    .dl-2{
+        width: 100%;
+        margin-left: -20px;
+    }
+    .dc-2{
+        width: 30%;
+        
+    }
 }
 
 /* Small Screens (max-width: 430px) */
@@ -181,6 +189,17 @@
     }
     .destinations-list {
         gap: 5px;
+    }
+    .dl-2{
+        width: 100%;
+        margin-left: -20px;
+    }
+    .dc-2{
+        width: 30%;
+        
+    }
+    .dl-2 a{
+        font-size: 11px;
     }
 }
 
