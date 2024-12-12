@@ -2,10 +2,11 @@ import express from 'express';
 import morgan from 'morgan';
 import helmet from 'helmet';
 import cors from 'cors';
-
+import cookieParser from "cookie-parser";
+import session from "express-session";
+import dotenv from "dotenv";
 import * as middlewares from './middlewares';
-import MessageResponse from './interfaces/MessageResponse';
-import auth from './api/auth/index';
+import auth from './api/routes/authRoutes';
 require('dotenv').config();
 
 const app = express();
@@ -15,7 +16,17 @@ app.use(helmet());
 app.use(cors());
 app.use(express.json());
 
-app.get<{}, MessageResponse>('/', (req, res) => {
+app.use(cookieParser());
+app.use(
+    session({
+        secret: process.env.SESSION_SECRET || "default_secret",
+        resave: false,
+        saveUninitialized: false,
+        cookie: { secure: false }, // Set secure: in production
+    })
+);
+
+app.get<{}, any>('/', (req, res) => {
   res.json({
     message: 'Welcome to touring',
   });
