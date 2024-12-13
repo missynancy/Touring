@@ -1,5 +1,4 @@
-
-import prisma from '../prismaClient.ts'
+import prisma from '../prismaClient'
 
 
 // Add a new blog
@@ -28,6 +27,13 @@ export const deleteBlog = async (blogId: number, authorId: number) => {
 export const getBlogsByUser = async (authorId: number) => {
     return prisma.blog.findMany({
         where: { authorId },
+        orderBy: { createdAt: "desc" },
+    });
+};
+
+// Get all blogs 
+export const getAllBlogs = async () => {
+    return prisma.blog.findMany({
         orderBy: { createdAt: "desc" },
     });
 };

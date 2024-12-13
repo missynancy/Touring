@@ -1,9 +1,9 @@
 import { Request, Response } from "express";
-import { addBlog, updateBlog, deleteBlog, getBlogsByUser } from "../models/Blog";
+import { addBlog, updateBlog, deleteBlog, getBlogsByUser, getAllBlogs } from "../models/Blog";
 
 export const addBlogHandler = async (req: Request, res: Response) => {
     const { title, content } = req.body;
-    const userId = req.session.user?.id;
+    const userId = req.session.userId;
 
     if (!userId) return res.status(401).json({ error: "Unauthorized" });
     if (!title || !content) return res.status(400).json({ error: "Missing fields" });
@@ -20,7 +20,7 @@ export const addBlogHandler = async (req: Request, res: Response) => {
 export const updateBlogHandler = async (req: Request, res: Response) => {
     const { title, content } = req.body;
     const blogId = parseInt(req.params.id, 10);
-    const userId = req.session.user?.id;
+    const userId = req.session.userId;
 
     if (!userId) return res.status(401).json({ error: "Unauthorized" });
     if (!blogId || !title || !content) return res.status(400).json({ error: "Missing fields" });
@@ -38,7 +38,7 @@ export const updateBlogHandler = async (req: Request, res: Response) => {
 
 export const deleteBlogHandler = async (req: Request, res: Response) => {
     const blogId = parseInt(req.params.id, 10);
-    const userId = req.session.user?.id;
+    const userId = req.session.userId;
 
     if (!userId) return res.status(401).json({ error: "Unauthorized" });
     if (!blogId) return res.status(400).json({ error: "Missing blog ID" });
@@ -55,13 +55,25 @@ export const deleteBlogHandler = async (req: Request, res: Response) => {
 };
 
 export const getUserBlogsHandler = async (req: Request, res: Response) => {
-    const userId = req.session.user?.id;
+    const userId = req.session.userId;
 
     if (!userId) return res.status(401).json({ error: "Unauthorized" });
 
     try {
         const blogs = await getBlogsByUser(userId);
         res.json(blogs);
+    } catch (error) {
+        console.error("Error fetching blogs:", error);
+        res.status(500).json({ error: "Internal server error" });
+    }
+};
+
+export const getAllBlogsHandler = async (req: Request, res: Response) => {
+
+    try {
+        const blogs = await getAllBlogs();
+        res.json(blogs);
+
     } catch (error) {
         console.error("Error fetching blogs:", error);
         res.status(500).json({ error: "Internal server error" });

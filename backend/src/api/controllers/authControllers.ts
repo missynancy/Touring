@@ -5,11 +5,11 @@ import { compare } from "bcrypt";
 
 // Register a new user
 export const registerUser = async (req: Request, res: Response) => {
-    const { username, password } = req.body;
+    const { username, password, email } = req.body;
     if (!username || !password) return res.status(400).json({ error: "Missing fields" });
 
     const hashedPass = await hashPassword(password);
-    const user = await addUser(username, hashedPass);
+    const user = await addUser(username, hashedPass, email);
 
     if (user) return res.status(201).json({ message: "User registered successfully" });
     return res.status(400).json({ error: "User already exists" });
@@ -24,9 +24,8 @@ export const loginUser = async (req: Request, res: Response) => {
     if (!user || !(await verifyPassword(password, user.password))) {
         return res.status(401).json({ error: "Invalid credentials" });
     }
-
-    req.session.user = { id: user.id, username: user.username };
-    res.json({ message: "Login successful" });
+    req.session.userId = user.id; 
+    res.json({ message: "Login successful", session: req.session.userId });
 };
 
 // Logout a user

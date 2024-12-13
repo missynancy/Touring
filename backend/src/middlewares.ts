@@ -1,5 +1,4 @@
-import { NextFunction, Request, Response } from 'express';
-
+import { NextFunction, Request, Response, RequestHandler } from 'express';
 import ErrorResponse from './interfaces/ErrorResponse';
 
 export function notFound(req: Request, res: Response, next: NextFunction) {
@@ -18,11 +17,11 @@ export function errorHandler(err: Error, req: Request, res: Response<ErrorRespon
   });
 }
 
-
 export const isAuthenticated = (req: Request, res: Response, next: NextFunction) => {
-    if (req.session.user) {
+    if (req.session.userId) {
         return next();
       }
     res.status(401).json({ error: "Unauthorized" });
 };
-  
+
+
