@@ -39,3 +39,60 @@ model Blog {
   updatedAt DateTime @updatedAt
 }
 
+model Category{
+    id          Int     @id @default(autoincrement())
+    name        String
+    safaris     Safaris[]
+    
+  }
+
+model Safaris{
+    id          Int     @id @default(autoincrement())
+    name        String
+    content     String
+    image1      Bytes
+    categoryId  Int
+    category    Category @relation(fields:[categoryId], references:[id])
+    packages    Package[]
+    lowSeason   String
+    peakSeason  String
+  }
+
+model Package{
+   id          Int     @id @default(autoincrement())
+   name        String
+   content     String
+   safarisId   Int
+   safari      Safaris @relation(fields: [safarisId], references:[id])
+
+  }
+
+model Rates{
+    id          Int     @id @default(autoincrement())
+    name        String
+    content     String
+  }
+
+model Inclusive{
+    id          Int     @id @default(autoincrement())
+    name        String
+    content     String
+
+  }
+model Exclusive{
+    id          Int     @id @default(autoincrement())
+    name        String
+    content     String
+  }
+model Animals{
+    id          Int     @id @default(autoincrement())
+    name        String
+    content     String
+  }
+
+model Destination{
+    id          Int     @id @default(autoincrement())
+    name        String
+    content     String
+
+  }
