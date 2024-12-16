@@ -2,9 +2,9 @@ import prisma from '../prismaClient'
 
 
 // Add a new blog
-export const addBlog = async (title: string, content: string, authorId: number) => {
+export const addBlog = async (title: string, content: string, authorId: number, image: string) => {
     return prisma.blog.create({
-        data: { title, content, authorId },
+        data: { title, content, authorId, image },
     });
 };
 
@@ -17,9 +17,9 @@ export const updateBlog = async (blogId: number, title: string, content: string,
 };
 
 // Delete a blog
-export const deleteBlog = async (blogId: number, authorId: number) => {
-    return prisma.blog.deleteMany({
-        where: { id: blogId, authorId },
+export const deleteBlog = async (blogId: number) => {
+    return prisma.blog.delete({
+        where: { id: blogId},
     });
 };
 

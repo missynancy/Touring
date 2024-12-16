@@ -2,25 +2,30 @@ import prisma from '../prismaClient'
 
 
 // Add a new safari
-export const addSafari = async (title: string, content: string, categoryId: number, image1: bytes, lowSeason: string, peakSeason: string ) => {
+export const addSafari = async (name: string, content: string, categoryId: number, image: string, lowSeason: string, peakSeason: string ) => {
     return prisma.safaris.create({
-        data: { name, content, image1, categoryId, lowSeason, peakSeason},
+        data: {
+      name, content, image, lowSeason, peakSeason, 
+      category: {
+        connect: { id: categoryId }, 
+      },
+    },
     });
 };
 
 
 // Update a safari
-export const updateSafari = async (safariId: number, name: string, content: string, peakSeason: string, lowSeason: string, image1: bytes) => {
+export const updateSafari = async (safariId: number, name: string, content: string, categoryId: number,  peakSeason: string, lowSeason: string, image: string) => {
     return prisma.safaris.updateMany({
         where: { id: safariId},
-        data: { , content },
+        data: { name, categoryId, peakSeason, lowSeason, image, content },
     });
 };
 
 // Delete a safari
 export const deleteSafari = async (safariId: number) => {
-    return prisma.safaris.deleteMany({
-        where: { id: blogId, authorId },
+    return prisma.safaris.delete({
+        where: { id: safariId },
     });
 };
 
@@ -32,7 +37,7 @@ export const getAllSafari = async () => {
 };
 
 export const getSafari = async (safariId: number ) => {
-    return prisma.safaris.findMany({
+    return prisma.safaris.findUnique({
     where: { id: safariId}
     });
 };

@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { addSafariHandler } from "../controllers/authControllers"
+import { registerUser, loginUser, logoutUser } from "../controllers/authControllers"
 
 const router = Router();
 

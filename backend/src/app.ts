@@ -8,6 +8,8 @@ import dotenv from "dotenv";
 import * as middlewares from './middlewares';
 import auth from './api/routes/authRoutes';
 import blog from './api/routes/blogRoutes';
+import safaris from './api/routes/safarisRoutes';
+import category from './api/routes/categoryRoutes';
 
 require('dotenv').config();
 import { sessionMiddleware , sessionStoreMiddleware } from './utils/sessions'
@@ -30,6 +32,8 @@ app.get<{}, any>('/', (req, res) => {
 
 app.use('/auth', auth);
 app.use('/blog',blog);
+app.use('/safaris', safaris);
+app.use('/category', category);
 
 app.use(middlewares.notFound);
 app.use(middlewares.errorHandler);

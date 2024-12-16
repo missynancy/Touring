@@ -7,6 +7,20 @@ import {
     getAllBlogsHandler,
 } from "../controllers/blogController";
 import { isAuthenticated } from "../../middlewares";
+import multer from 'multer';
+import path from "path";
+
+// Configure Multer for storage
+const storage = multer.diskStorage({
+  destination: (req, file, cb) => {
+    cb(null, path.join(__dirname, "../../uploads/")); // Store images in 'uploads' folder
+  },
+  filename: (req, file, cb) => {
+    cb(null, `${Date.now()}-${file.originalname}`);
+  },
+});
+
+const upload = multer({ storage });
 
 const router = Router();
 

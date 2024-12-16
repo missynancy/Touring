@@ -1,15 +1,16 @@
 import { Request, Response } from "express";
 import { addBlog, updateBlog, deleteBlog, getBlogsByUser, getAllBlogs } from "../models/Blog";
+import path from "path";
 
 export const addBlogHandler = async (req: Request, res: Response) => {
-    const { title, content } = req.body;
+    const { title, content, image } = req.body;
     const userId = req.session.userId;
-
     if (!userId) return res.status(401).json({ error: "Unauthorized" });
-    if (!title || !content) return res.status(400).json({ error: "Missing fields" });
+
+    const imageUrl = req.file ? path.join("uploads", req.file.filename) : "default-image.png";
 
     try {
-        const blog = await addBlog(title, content, userId);
+        const blog = await addBlog(title, content, userId, imageUrl);
         res.status(201).json({ message: "Blog created successfully", blog });
     } catch (error) {
         console.error("Error adding blog:", error);
@@ -23,11 +24,10 @@ export const updateBlogHandler = async (req: Request, res: Response) => {
     const userId = req.session.userId;
 
     if (!userId) return res.status(401).json({ error: "Unauthorized" });
-    if (!blogId || !title || !content) return res.status(400).json({ error: "Missing fields" });
 
+    const imageUrl = req.file ? path.join("uploads", req.file.filename) : "default-image.png";
     try {
         const updated = await updateBlog(blogId, title, content, userId);
-        if (updated.count === 0) return res.status(404).json({ error: "Blog not found or not authorized" });
 
         res.json({ message: "Blog updated successfully" });
     } catch (error) {
@@ -40,12 +40,8 @@ export const deleteBlogHandler = async (req: Request, res: Response) => {
     const blogId = parseInt(req.params.id, 10);
     const userId = req.session.userId;
 
-    if (!userId) return res.status(401).json({ error: "Unauthorized" });
-    if (!blogId) return res.status(400).json({ error: "Missing blog ID" });
-
     try {
-        const deleted = await deleteBlog(blogId, userId);
-        if (deleted.count === 0) return res.status(404).json({ error: "Blog not found or not authorized" });
+        const deleted = await deleteBlog(blogId);
 
         res.json({ message: "Blog deleted successfully" });
     } catch (error) {

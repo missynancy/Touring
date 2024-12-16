@@ -1,17 +1,16 @@
 import { Request, Response } from "express";
-import { addSafari, updateSafari, deleteSafari, getAllSafari , getSafari } from "../models/Blog";
-import multer from 'multer';
-const storage = multer.memoryStorage();
-const upload = multer({ storage });
+import { addSafari, updateSafari, deleteSafari, getAllSafari , getSafari } from "../models/Safaris";
+import path from "path";
 
 export const addSafariHandler = async (req: Request, res: Response) => {
-    const { title, content, categoryId, lowSeason, peakSeason } = req.body;
-    const image1 = req.file?.buffer;
+    const { name, content, categoryId, lowSeason, peakSeason } = req.body;
 
-    if (!title || !content || !lowSeason || !peakSeason ) return res.status(400).json({ error: "Missing fields" });
+    if (!name || !content || !lowSeason || !peakSeason ) return res.status(400).json({ error: "Missing fields" });
+
+    const imageUrl = req.file ? path.join("uploads", req.file.filename) : "default-image.png";
 
     try {
-        const safari = await addSafari(name, content, image1, categoryId, lowSeason, peakSeason);
+        const safari = await addSafari(name, content, categoryId, imageUrl, lowSeason, peakSeason);
 
         res.status(201).json({ message: "Safari created successfully", safari });
 
@@ -23,10 +22,10 @@ export const addSafariHandler = async (req: Request, res: Response) => {
 };
 
 
-export const getAllBlogsHandler = async (req: Request, res: Response) => {
+export const getAllSafariHandler = async (req: Request, res: Response) => {
 
     try {
-        const safais = await getAllSafari();
+        const safaris = await getAllSafari();
         res.json(safaris);
 
     } catch (error) {
@@ -38,12 +37,12 @@ export const getAllBlogsHandler = async (req: Request, res: Response) => {
 export const updateSafariHandler = async (req: Request, res: Response) => {
     const { name, content, categoryId, lowSeason ,peakSeason } = req.body;
     const safariId = parseInt(req.params.id, 10);
-    const image1 = req.file?.buffer;
+    const image = req.file ? path.join("uploads", req.file.filename) : "default-image.png";
 
-    if (!safariId || !title || !content) return res.status(400).json({ error: "Missing fields" });
+    if (!safariId || !name || !content) return res.status(400).json({ error: "Missing fields" });
 
     try {
-        const updated = await updateSafari(safariId, name, content, categoryId, image1);
+        const updated = await updateSafari(safariId, name, content, categoryId, lowSeason, peakSeason, image);
         if (updated.count === 0) return res.status(404).json({ error: "Safari not found or not authorized" });
 
         res.json({ message: "Safari updated successfully" });
@@ -60,30 +59,25 @@ export const getSafariHandler = async (req: Request, res: Response) => {
         const safari = await getSafari(safariId);
         if (!safari) {
         return res.status(404).json({ error: "Safari not found" });
+        res.status(200).json(safari)
       }
-    
-      const imageBase64 = safari.image1
-      ? `data:image/jpeg;base64,${safari.image1.toString("base64")}`
-      : null;
 
-    // Respond with full details, including the Base64 image
-    res.status(200).json({
-      id: safari.id,
-      name: safari.name,
-      content: safari.content,
-      categoryId: safari.categoryId,
-      lowSeason: safari.lowSeason,
-      peakSeason: safari.peakSeason,
-      image: imageBase64,
-    });
 
-    } catch (error) {
-        console.error("Error updating Safari:", error);
-        res.status(500).json({ error: "Internal server error" });
+    } catch(error){
+      console.error("Error Getting Safari:",error);
+      res.status(500).json({ error: "Internal Server Error"})
     }
 };
 
-// Convert the image to Base64 for easier frontend rendering
-    // const imageBase64 = safari.image1
-    //   ? `data:image/jpeg;base64,${safari.image1.toString("base64")}`
-    //   : null;
+
+export const deleteSafariHandler = async (req: Request, res: Response) => {
+    const safariId = parseInt(req.params.id, 10);
+    try{
+    const delSafari = await deleteSafari(safariId);
+    res.json(delSafari);
+
+  } catch(error){
+    res.status(500).json({ error: "server error"});
+  }
+
+};
